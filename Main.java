@@ -19,6 +19,13 @@ public class Main{
         corriente.retirar();
         corriente.pagar();
         System.out.println();
+        
+        System.out.println("=== EJERCICIO 3: Gestión de Vehículos ===");
+        CocheClass coche = new CocheClass();
+        coche.conducir();
  
+        CamionClass camion = new CamionClass();
+        camion.conducir();
+        camion.cargarMercancia();
     }
 }
