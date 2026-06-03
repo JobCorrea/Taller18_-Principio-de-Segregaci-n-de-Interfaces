@@ -1,0 +1,66 @@
+@@startuml
+
+'==EJERCICIO 1===
+interface Reparacion{
+    +reparar(): void
+}
+interface Limpieza{
+    +limpiar(): void
+}
+class Tecnico implements  Reparacion{
+    +reparar(): void
+}
+class PersonalAseo implements Limpieza{
+    +limpiar(): void
+}
+' ======= EJERCICIO 2 =======
+interface Transferencia {
+    + transferir() : void
+}
+interface Retiro {
+    + retirar() : void
+}
+interface PagoFactura {
+    + pagar() : void
+}
+class CuentaAhorro implements Transferencia, Retiro {
+    + transferir() : void
+    + retirar() : void
+}
+class CuentaEmpresarial implements PagoFactura {
+    + pagar() : void
+}
+class CuentaCorriente implements Transferencia, Retiro, PagoFactura {
+    + transferir() : void
+    + retirar() : void
+    + pagar() : void
+}
+
+' ======= EJERCICIO 3 =======
+interface Conducible {
+    + conducir() : void
+}
+interface Transportador {
+    + cargarMercancias() : void
+}
+class Coche implements Conducible {
+    + conducir() : void
+}
+class Camion implements Conducible, Transportador {
+    + conducir() : void
+    + cargarMercancias() : void
+}
+' ======= MAIN =======
+class Main {
+    + main(args : String[]) : void
+}
+
+
+Main ..> Tecnico
+Main ..> PersonalAseo
+Main ..> CuentaAhorro
+Main ..> CuentaEmpresarial
+Main ..> CuentaCorriente
+Main ..> Coche
+Main ..> Camion
+@@enduml
